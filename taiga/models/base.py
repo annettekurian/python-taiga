@@ -63,6 +63,7 @@ class ListResource(Resource):
             except (ValueError, TypeError):
                 page_size = 100
             queryparams['page_size'] = page_size
+            queryparams['page'] = page
         result = self.requester.get(
             self.instance.endpoint, query=queryparams, paginate=pagination
         )
